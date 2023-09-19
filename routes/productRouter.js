@@ -14,6 +14,8 @@ const {isAuthenticatedUser} = require('../middleware/auth.js')
 
 const router = express.Router()
 
+const upload = require('../middleware/upload.js')
+
 
 
 // express.Router() is a method provided by 
@@ -26,4 +28,10 @@ router.route("/product/new").post(isAuthenticatedUser,productController.createPr
 
 router.route("/product/:id").put(isAuthenticatedUser,productController.updateProduct).delete(productController.deleteProduct).get(isAuthenticatedUser,productController.getOneProduct)
 
+// router.route('/upload').post(upload.single('image'),productController.sendImg)
+
+router.route("/products/men").get(productController.getMenProducts)
+router.route("/products/women").get(productController.getWomenProducts)
+// Your routes
+router.route('/upload').post(upload.single('image'), productController.sendImg);
 module.exports = router

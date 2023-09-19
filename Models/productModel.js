@@ -22,52 +22,32 @@ const productSchema = new mongoose.Schema({
   },
   rating: {
     type: Number,
-    default: 0,
+    default: 4,
   },
-  images: [
-    {
-      public_id: {
-        type: String,
-        required: [true],
-      },
-      url: {
-        type: String,
-        required: [true],
-      },
-    },
-  ],
+  image: {
+    type: String,
+    required:[true,'Please Enter the product image']
+  },
   category:{
     type:String,
-    required:[true,'The product should hava a  category ']
+    required:[true,'The product should hava a  category']
   },
-  stock:{
-    type:Number,
-    default:1,
-    maxLength:[4,'The product stock should be less than 4 characters']
+  role: {
+    type: String,
+    required:[true,'Please describe the role/gender']
   },
-  numOfReviews: {
-    type: Number,
-    default: 0,
-  },
-  reviews: [
-    {
-      name: {
-        type: String,
-        required: true,
-      },
-      rating: {
-        type: Number,
-        required: true,
-      },
-      comments: {
-        type: String,
-      },
-    },
-  ],
   createdAt: {
     type: Date,
     default: Date.now(),
   },
+  addToCart:{
+    type:Boolean,
+    default:false
+  },
+  bestProducts:{
+    type:Boolean,
+    // default:true
+  }
 });
 
 // module.exports:

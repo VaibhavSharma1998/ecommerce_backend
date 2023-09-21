@@ -26,7 +26,12 @@ router.route("/products").get(productController.getAllProducts)
 
 router.route("/product/new").post(isAuthenticatedUser,productController.createProducts)
 
-router.route("/product/:id").put(isAuthenticatedUser,productController.updateProduct).delete(productController.deleteProduct).get(isAuthenticatedUser,productController.getOneProduct)
+//  21st sep 2023
+// note: isAuthenticatedUser,  
+//  this line of code is added in the first parameter of put 
+// to add autentiction of the token 
+// for now remove it
+router.route("/product/:id").put(productController.updateProduct).delete(productController.deleteProduct).get(isAuthenticatedUser,productController.getOneProduct)
 
 // router.route('/upload').post(upload.single('image'),productController.sendImg)
 

@@ -32,6 +32,7 @@
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.4",
     "server.js": "^1.0.0",
+    "stripe": "^13.7.0",
     "validator": "^13.11.0"
   }
 }

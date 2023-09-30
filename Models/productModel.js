@@ -18,7 +18,7 @@ const productSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: [true, "A product must have a price"],
-    maxLength:[8,'The  price should be less than 8 characters']
+    maxLength: [8, "The  price should be less than 8 characters"],
   },
   rating: {
     type: Number,
@@ -26,31 +26,29 @@ const productSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required:[true,'Please Enter the product image']
+    required: [true, "Please Enter the product image"],
   },
-  category:{
-    type:String,
-    required:[true,'The product should hava a  category']
+  category: {
+    type: String,
+    required: [true, "The product should hava a  category"],
   },
   role: {
     type: String,
-    required:[true,'Please describe the role/gender']
+    required: [true, "Please describe the role/gender"],
   },
-  love:{
-    type:Stri
-  },
+
   createdAt: {
     type: Date,
     default: Date.now(),
   },
-  addToCart:{
-    type:Boolean,
-    default:false
+  addToCart: {
+    type: Boolean,
+    default: false,
   },
-  bestProducts:{
-    type:Boolean,
+  bestProducts: {
+    type: Boolean,
     // default:true
-  }
+  },
 });
 
 // module.exports:

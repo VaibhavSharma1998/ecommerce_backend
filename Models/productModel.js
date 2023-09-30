@@ -37,7 +37,7 @@ const productSchema = new mongoose.Schema({
     required:[true,'Please describe the role/gender']
   },
   love:{
-    type:String
+    type:Stri
   },
   createdAt: {
     type: Date,
